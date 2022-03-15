@@ -1,9 +1,7 @@
 .conversation {
-  height: 100vh;
   width: 100%;
   font-size: 13px;
   gap: 35px;
-  background-color: brown;
   padding: 10px;
 }
 
@@ -25,7 +23,7 @@
   position: relative;
 }
 
-.chatMessage__content p {
+.chatMessage__content div {
   position: relative;
   border-radius: 8px;
   z-index: 2;
@@ -57,11 +55,11 @@
   margin: 0;
 }
 
-.right p .ecor-left {
+.right div .ecor-left {
   display: none;
 }
 
-.right p .ecor-right {
+.right div .ecor-right {
   width: 25px;
   height: 15px;
   position: absolute;

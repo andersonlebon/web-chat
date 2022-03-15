@@ -1,29 +1,48 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuid } from 'uuid';
 
 
+export const getMessages = (dispatch) => (setMessages) => {
+
+    const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        dispatch({type: setMessages.type, payload: messages});
+    console.log(messages);
+}
+
+export const addMessage = (dipatch) => (saveMessage) => (message) => {
+    dipatch(saveMessage(message));
+
+}
 const chatSlice = createSlice({
     name: "chat",
     initialState: {
-        messages: [],
+        chats: [],
         isLoading: false,
         error: null,
     },
 
     reducers: {
         setMessages(state, action) {
-            state.messages.push(action.payload);
+            state.chats = action.payload;
         },
 
-        SaveMessage(state, action) {
-            const currentM = state.messages.find(message => message.id !== action.payload.id);
+        saveMessage(state, action) {
+            const currentM = state.chats.find(chat => chat.id === action.payload.id);
             if (currentM) {
-                currentM.texts.push(action.payload.text);
+                currentM.messages.push(action.payload);
             }
             else {
-                state.messages.push(action.payload);
-            }
+                state.chats.push({
+                 id : uuid(),
+                 messages: [action.payload],
+                 sender : action.payload.sender || "",
+                 receiver : action.payload.receiver || null,
+                 createdAt : action.payload.time + " " + action.payload.date,
+    
+         });
+        }
+    },
 
-        },
         setLoading(state, action) {
             state.isLoading = action.payload;
         },
@@ -36,6 +55,6 @@ const chatSlice = createSlice({
     },
 });
 
-export const { setMessages, SaveMessage, setLoading, setError, clearError } = chatSlice.actions;
 
+export const { setMessages, saveMessage, setLoading, setError, clearError } = chatSlice.actions;
 export default chatSlice.reducer;

@@ -5,22 +5,15 @@ import { setUser, saveUser } from './store/users/user';
 import Navbar from './components/navbar';
 import Home from './components/Home';
 import './sass/app.css';
+import { getMessages, setMessages } from './store/chat/chat';
 
 
 function App() {
   const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   useEffect(() => {
-    const user =  {
-            id: 10,
-            name: "lebon",
-            avatar: null,
-        };
-
-    dispatch({type: setUser.type, payload: user});
-    dispatch({type: saveUser.type, payload: user});
-    
-
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        dispatch(setMessages(messages));
   }, [dispatch]);
 
 

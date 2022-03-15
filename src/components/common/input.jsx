@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 
-const Input = ({type, onchange, value, name}) => {
+const Input = ({type, onchange, value, name, clas }) => {
     return ( 
-        <input type={type} onChange={(e) => onchange()} value={value} name={name}/>
+        <input type={type} className={clas} onChange={(e) => onchange(e)} value={value} name={name}/>
      );
 }
  
