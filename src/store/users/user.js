@@ -4,7 +4,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const userSlice = createSlice({
     name: "user",
     initialState: {
-        messages: [],
         users: [],
         user: {
             id: null,
@@ -22,8 +21,11 @@ const userSlice = createSlice({
         saveUser(state, action) {
             state.users.push(action.payload);
         },
-        SaveMessages(state, action) {
-            state.messages.push(action.payload);
+        setUsers(state, action) {
+            state.users = action.payload;
+        },
+        removeUser(state, action) {
+            state.users = state.users.filter(user => user.id !== action.payload);
         },
         setLoading(state, action) {
             state.isLoading = action.payload;

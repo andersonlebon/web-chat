@@ -5,25 +5,24 @@ const chatSlice = createSlice({
     name: "chat",
     initialState: {
         messages: [],
-        users: [],
-        user: {
-            id: null,
-            name: null,
-            avatar: null,
-        },
         isLoading: false,
         error: null,
     },
 
     reducers: {
-        setUser(state, action) {
-            state.user = action.payload;    
-        },
-        saveUser(state, action) {
-            state.users.push(action.payload);
-        },
-        SaveMessages(state, action) {
+        setMessages(state, action) {
             state.messages.push(action.payload);
+        },
+
+        SaveMessage(state, action) {
+            const currentM = state.messages.find(message => message.id !== action.payload.id);
+            if (currentM) {
+                currentM.texts.push(action.payload.text);
+            }
+            else {
+                state.messages.push(action.payload);
+            }
+
         },
         setLoading(state, action) {
             state.isLoading = action.payload;
@@ -37,6 +36,6 @@ const chatSlice = createSlice({
     },
 });
 
-export const { setUser, saveUser, setMessages, setLoading, setError, clearError } = chatSlice.actions;
+export const { setMessages, SaveMessage, setLoading, setError, clearError } = chatSlice.actions;
 
 export default chatSlice.reducer;

@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser, saveUser } from './store/chat/chat';
+import { setUser, saveUser } from './store/users/user';
 
 
 function App() {
