@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Home from './components/Home';
 import './sass/app.css';
 import { getMessages, setMessages } from './store/chat/chat';
+import LogIn from './components/logIn';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
         <Routes>
           <Route path="/" element={<Navbar/>}/>
+          <Route path="/login" element={<LogIn/>}/>
           <Route path="/Home" element={<Home/>}/>
         </Routes>
 
