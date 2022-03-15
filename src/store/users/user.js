@@ -17,7 +17,7 @@ const userSlice = createSlice({
 
     reducers: {
         setUser(state, action) {
-            const user = state.find(user => user.name === action.payload.name);  
+            const user = state.users.find(user => user.name === action.payload.name);  
             if (user) {
                 state.user = user;
             }  else{
@@ -25,7 +25,7 @@ const userSlice = createSlice({
             }
         },
         saveUser(state, action) {
-            const user = state.find(user => user.name === action.payload.name);
+            const user = state.users.find(user => user.name === action.payload.name);
             if (!user) {
                 state.users.push({...action.payload, id: uuid()});
             } else {

@@ -7,6 +7,7 @@ import Home from './components/Home';
 import './sass/app.css';
 import { getMessages, setMessages } from './store/chat/chat';
 import LogIn from './components/logIn';
+import SignUp from './components/signUp';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        dispatch(setUser(users));
         dispatch(setMessages(messages));
   }, [dispatch]);
 
@@ -23,6 +26,7 @@ function App() {
           <Route path="/" element={<Navbar/>}/>
           <Route path="/login" element={<LogIn/>}/>
           <Route path="/Home" element={<Home/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
         </Routes>
 
   );
