@@ -1,7 +1,10 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom'
 import { setUser, saveUser } from './store/users/user';
+import Navbar from './components/navbar';
+import Home from './components/Home';
+import './sass/app.css';
 
 
 function App() {
@@ -16,14 +19,17 @@ function App() {
 
     dispatch({type: setUser.type, payload: user});
     dispatch({type: saveUser.type, payload: user});
+    
 
   }, [dispatch]);
 
 
   return (
-    <main className="main-page">
-      this
-    </main>
+        <Routes>
+          <Route path="/" element={<Navbar/>}/>
+          <Route path="/Home" element={<Home/>}/>
+        </Routes>
+
   );
 }
 
