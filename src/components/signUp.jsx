@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Input from './common/input';
 import { useDispatch } from 'react-redux';
 import { saveUser } from '../store/users/user';
-
+import { v4 as uuid } from 'uuid';
 
 const SignUp = () => {
     const [nameValue, setnameValue] = useState('');
@@ -12,7 +12,17 @@ const SignUp = () => {
     }
     const handelSubmit = (e) => {
         e.preventDefault();
-        dispatch({type: saveUser.type, payload: {name: nameValue}});
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const newUser = users.find(item => item.name === nameValue);
+        const user = {
+                name: nameValue,
+                id: uuid(),
+        }
+        if (!newUser) {
+            users.push(user);
+        }
+        localStorage.setItem('users', JSON.stringify(users));
+        dispatch({type: saveUser.type, payload: user});
         
     }
     return ( <section className="signUp">

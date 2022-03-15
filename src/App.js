@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom'
-import { setUser, saveUser } from './store/users/user';
+import { setUsers } from './store/users/user';
 import Navbar from './components/navbar';
 import Home from './components/Home';
 import './sass/app.css';
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
         const users = JSON.parse(localStorage.getItem('users')) || [];
-        dispatch(setUser(users));
+        dispatch(setUsers(users));
         dispatch(setMessages(messages));
   }, [dispatch]);
 

@@ -27,7 +27,7 @@ const userSlice = createSlice({
         saveUser(state, action) {
             const user = state.users.find(user => user.name === action.payload.name);
             if (!user) {
-                state.users.push({...action.payload, id: uuid()});
+                state.users.push(action.payload);
             } else {
                 state.error = "User already exists";
             }
@@ -51,6 +51,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { setUser, saveUser, setMessages, setLoading, setError, clearError } = userSlice.actions;
+export const { setUser, saveUser, setUsers, setLoading, setError, clearError } = userSlice.actions;
 
 export default userSlice.reducer;
