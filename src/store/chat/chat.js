@@ -19,7 +19,7 @@ const chatSlice = createSlice({
         setUser(state, action) {
             state.user = action.payload;    
         },
-        SaveUsers(state, action) {
+        saveUser(state, action) {
             state.users.push(action.payload);
         },
         SaveMessages(state, action) {
@@ -37,6 +37,6 @@ const chatSlice = createSlice({
     },
 });
 
-export const { setUser, setUsers, setMessages, setLoading, setError, clearError } = chatSlice.actions;
+export const { setUser, saveUser, setMessages, setLoading, setError, clearError } = chatSlice.actions;
 
 export default chatSlice.reducer;
