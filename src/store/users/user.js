@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
 
 
 const userSlice = createSlice({
@@ -16,10 +17,21 @@ const userSlice = createSlice({
 
     reducers: {
         setUser(state, action) {
-            state.user = action.payload;    
+            const user = state.find(user => user.name === action.payload.name);  
+            if (user) {
+                state.user = user;
+            }  else{
+                state.error = "User not found";
+            }
         },
         saveUser(state, action) {
-            state.users.push(action.payload);
+            const user = state.find(user => user.name === action.payload.name);
+            if (!user) {
+                state.users.push({...action.payload, id: uuid()});
+            } else {
+                state.error = "User already exists";
+            }
+
         },
         setUsers(state, action) {
             state.users = action.payload;
