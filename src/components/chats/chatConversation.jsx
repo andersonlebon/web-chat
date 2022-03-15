@@ -7,7 +7,20 @@ const Conversation = () => {
         <section className="conversation d-flex flex-column">
             <ChatMessage position="left"/>
             <ChatMessage position="right"/>
+            <ChatMessage position="left"/>
+            <ChatMessage position="right"/>
+            <ChatMessage position="left"/>
+            <ChatMessage position="right"/>
+            <ChatMessage position="left"/>
+            <ChatMessage position="right"/>
+            <ChatMessage position="left"/>
+            <ChatMessage position="left"/>
 
+            <ChatMessage position="left"/>
+
+            <ChatMessage position="left"/>
+
+            <ChatMessage position="right"/>
         </section>
      );
 }

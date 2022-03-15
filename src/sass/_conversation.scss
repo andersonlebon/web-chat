@@ -9,8 +9,8 @@
 
 .ChatMessage__avatar {
     img {
-        width: 80px;
-        width: 80px;
+        width: 65px;
+        width: 65px;
         border-radius: 50%;
     }
 }
@@ -73,6 +73,17 @@
            top: 0;
            right: -10px;
            border-radius: 0 0 100% 0;
+        }
+    }
+}
+
+.homepage {
+    .left {
+        .chatMessage__content{
+            p {
+                 
+                background-color: cadetblue;
+            }
         }
     }
 }
