@@ -2,6 +2,10 @@ import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import chatReducer from './chat/chat';
 import userReducer from './users/user';
+import {
+  createStateSyncMiddleware,
+  initMessageListener,
+} from "redux-state-sync";
 
 
 const rootReducer = combineReducers({
@@ -9,6 +13,7 @@ const rootReducer = combineReducers({
     users: userReducer,
 });
 
-const store = configureStore({ reducer: rootReducer });
+const store = configureStore({ reducer: rootReducer, middleware: [createStateSyncMiddleware()] });
+initMessageListener(store);
 
 export default store;
