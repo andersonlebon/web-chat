@@ -3,6 +3,34 @@
   font-size: 13px;
   gap: 35px;
   padding: 10px;
+  height: 100vh;
+}
+
+.conversation form {
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.conversation form input[type="text"] {
+  border-radius: 50px;
+  border: none;
+  background-color: #f5f5f5f3;
+}
+
+.send-btn {
+  width: 45px;
+  height: 40px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 .ChatMessage__avatar img {
@@ -109,6 +137,12 @@
   gap: 20px;
 }
 
+.side-chat .name {
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+
 .date-time {
   font-size: 12px;
   color: #999;
@@ -173,6 +207,34 @@
   color: #333;
 }
 
+@media (min-width: 768px) {
+  .navbar-chat .navbar-logo {
+    font-size: 12px;
+  }
+}
+
+.logIn {
+  height: 40vh;
+}
+
+.logIn label {
+  color: #9c9c9c;
+}
+
+@media (min-width: 758px) {
+  .logIn {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .logIn form {
+    width: 55%;
+  }
+}
+
 *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -193,5 +255,6 @@ a {
 
 main {
   padding-top: 140px;
+  height: 70vh;
 }
 /*# sourceMappingURL=app.css.map */

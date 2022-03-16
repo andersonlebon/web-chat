@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { setUser } from '../store/users/user';
 import Input from './common/input';
 
@@ -7,6 +8,7 @@ import Input from './common/input';
 const LogIn = () => {
     const [nameValue, setnameValue] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setnameValue(e.target.value);
@@ -18,18 +20,26 @@ const LogIn = () => {
 
         if (user) {
             sessionStorage.setItem('user', JSON.stringify(user));
+            dispatch({ type: setUser.type, payload: user });
+            navigate(`/`)
+
         }
         else {
         dispatch({type: setUser.type, payload: {name: nameValue}});
         }
+
+        setnameValue('');
     }
 
     return ( 
-        <section className="logIn" onSubmit={handleSubmit}>
-            <h1>Log In</h1>
-            <form className="form-control d-flex my-5">
-                <Input type="text" onchange={handleChange} value={nameValue} clas="form-control" name="username"/>
-                <Input type="submit" value="LogIn"/>
+        <section className="logIn d-flex flex-column justify-content-center" onSubmit={handleSubmit}>
+            <h1 className="text-center weight-bold">Log In</h1>
+            <form className="flex-column d-flex p-3">
+                <div className="group-control my-5">
+                <label htmlFor="liginInput" className="title">Name</label>
+                <Input type="text" id="liginInput" onchange={handleChange} value={nameValue} clas="form-control" name="username"/>
+                </div>
+                <button className="btn btn-primary" type="submit">SignIn</button>
             </form>
         </section>
                 

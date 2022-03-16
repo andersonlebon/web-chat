@@ -5,6 +5,7 @@ import { setMessages, saveMessage} from '../../store/chat/chat';
 import Input from '../common/input';
 import { v4 as uuid } from 'uuid';
 import { useParams } from 'react-router';
+import { MdSend } from 'react-icons/md';
 
 
 
@@ -70,11 +71,11 @@ const Conversation = () => {
 
     
     return ( 
-        <section className="conversation d-flex flex-column">
+        <section className="conversation d-flex flex-column ">
             { messages? messages.map(message => <ChatMessage key={message.id} message={message} position={user.id === message.authorId ? 'right' : 'left'}/>) : 'no conversations'}
-            <form className="form-control d-flex my-5" onSubmit={handleSubmit}>
+            <form className="d-flex bg-primary justify-content-between" onSubmit={handleSubmit}>
                 <Input type="text" clas="form-control" onchange={handleChange} value={message} name="message"/>
-                <Input type="submit" value="Send" clas="btn btn-primary"/> 
+                <button type="submit" className="text-primary send-btn"><MdSend/></button> 
             </form>
             </section>
      );

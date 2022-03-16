@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom'
-import { setUsers } from './store/users/user';
+import { setUser, setUsers } from './store/users/user';
 import Navbar from './components/navbar';
 import Home from './components/Home';
 import './sass/app.css';
@@ -13,21 +13,22 @@ import AllUsers from './components/chats/chatSideBar';
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { user } = useSelector(state => state.users);
   const dispatch = useDispatch();
-  const currentUser = JSON.parse(sessionStorage.getItem('user'));
   useEffect(() => {
+    const user = JSON.parse(sessionStorage.getItem('user')) || {};
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
         const users = JSON.parse(localStorage.getItem('users')) || [];
         dispatch(setUsers(users));
         dispatch(setMessages(messages));
+        dispatch(setUser(user));
   }, [dispatch]);
 
 
   return (
     <>
-        <Navbar currentUser={currentUser}/>
-        <main>
+        <Navbar currentUser={ user }/>
+        <main className="d-flex flex-column justify-content-center">
         <Routes>
 
           <Route path="/login" element={<LogIn/>}/>

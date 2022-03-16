@@ -18,7 +18,7 @@ const Navbar = ({currentUser}) => {
                 </ul>
             </div>
             <div className="navbar-logo d-flex flex-column align-items-center justify-content-around">
-                <div className="icon text-primary"><FaUserCircle /></div> <div>{currentUser.name}</div>
+                <div className="icon text-primary"><FaUserCircle /></div> <div>{currentUser.name || ''}</div>
             </div>
         </div>
     </header>

@@ -28,7 +28,7 @@
 
 
     .navbar-logo {
-
+        
         .icon {
             height: 100%;
             font-size: 50px;
@@ -39,5 +39,10 @@
     }
 }
 
-.navbar-container {
+@media (min-width: 768px) {
+    .navbar-chat {
+        .navbar-logo {
+            font-size: 12px;
+        }
+    }
 }

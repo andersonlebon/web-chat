@@ -14,7 +14,7 @@ import { FaUserCircle } from 'react-icons/fa';
 const Home = () => {
     const dispatch = useDispatch()
     const { chats } = useSelector(state => state.chat);
-    const user = JSON.parse(sessionStorage.getItem('user')) || null;
+    const user = JSON.parse(sessionStorage.getItem('user')) || {};
    
     useEffect(() => {
         const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -32,11 +32,14 @@ const Home = () => {
             {chats.map(chat => (
                 <li  key={chat.id} className="d-flex bg-white">
                     <Link className="d-flex align-items-center justify-content-between" to={`/conversation/${user.id !== chat.user1 ? chat.user1 : chat.user2 }`} >
-                        <div className="name-icon d-flex align-items-center justify-content-between">
-                            <div className="icon-img">
+                        <div className="name-icon d-flex align-items-center w-100 justify-content-between">
+                            <div className="icon-img text-primary">
                                 <FaUserCircle/>
                             </div>
-                        <h2 className="name pl-3 text-secondary"> {user.id !== chat.user1 ? chat.username1 : chat.username2 }</h2>
+                        <div className="name pl-3 text-secondary w-100"> 
+                            <h2 className="name pl-3 text-secondary"> {user.id !== chat.user1 ? chat.username1 : chat.username2 }</h2>
+                            <p className ="text-dark m-0 p-0">{chat.messages[chat.messages.length - 1].message}</p>
+                        </div>
                         </div>
 
                         <div className="date-time">
