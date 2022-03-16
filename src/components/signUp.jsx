@@ -3,7 +3,7 @@ import Input from './common/input';
 import { useDispatch } from 'react-redux';
 import { saveUser } from '../store/users/user';
 import { v4 as uuid } from 'uuid';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [nameValue, setnameValue] = useState('');
@@ -46,6 +46,9 @@ const SignUp = () => {
                 <Input type="text" id="liginInput" onchange={handelChange} value={nameValue} clas="form-control" name="username"/>
                 </div>
                 <button className="btn btn-primary" type="submit">Sign Up</button>
+                <span className="text-center text-secondary">or</span>
+                <Link to="/login" className="btn btn-primary" type="submit">Sign In</Link>
+
             </form>
         </section>
     

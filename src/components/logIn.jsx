@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import { setUser } from '../store/users/user';
 import Input from './common/input';
 
@@ -39,7 +40,10 @@ const LogIn = () => {
                 <label htmlFor="liginInput" className="title">Name</label>
                 <Input type="text" id="liginInput" onchange={handleChange} value={nameValue} clas="form-control" name="username"/>
                 </div>
-                <button className="btn btn-primary" type="submit">SignIn</button>
+                <button className="btn btn-primary" type="submit">Sign In</button>
+                <span className="text-center text-secondary">or</span>
+                <Link to="/signup" className="btn btn-primary" type="submit">Sign Up</Link>
+
             </form>
         </section>
                 
