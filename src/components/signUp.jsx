@@ -14,9 +14,14 @@ const SignUp = () => {
         e.preventDefault();
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const newUser = users.find(item => item.name === nameValue);
+        const today = new Date();
+        const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         const user = {
                 name: nameValue,
                 id: uuid(),
+                time: time,
+                date: date, 
         }
         if (!newUser) {
             users.push(user);

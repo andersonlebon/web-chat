@@ -53,6 +53,8 @@ const Conversation = () => {
                 id: uuid(),
                 user1: user.id,
                 user2: id,
+                username1: user.name,
+                username2: users.users.find(item => item.id === id).name,
                 messages: [amessage],
                 sender :amessage.sender || "",
                 receiver :amessage.receiver || null,

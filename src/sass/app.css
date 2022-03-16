@@ -73,6 +73,56 @@
   background-color: cadetblue;
 }
 
+.side-chat li {
+  border: 1px solid rgba(211, 211, 211, 0.404);
+  border-radius: 5px;
+  margin: 10px 20px;
+}
+
+.side-chat a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  padding: 20px;
+}
+
+.side-chat .icon-img {
+  font-size: 60px;
+  padding: 0;
+  width: 60px;
+}
+
+.side-chat h2 {
+  font-size: 16px;
+}
+
+.side-chat .name-icon {
+  font-size: 16px;
+  padding: 0;
+  width: 60px;
+  gap: 20px;
+}
+
+.date-time {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar {
+  background-color: lightgreen;
+}
+
 *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
