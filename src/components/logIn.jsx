@@ -39,6 +39,7 @@ const LogIn = () => {
                 <div className="group-control my-5">
                 <label htmlFor="liginInput" className="title">Name</label>
                 <Input type="text" id="liginInput" onchange={handleChange} value={nameValue} clas="form-control" name="username"/>
+                
                 </div>
                 <button className="btn btn-primary" type="submit">Sign In</button>
                 <span className="text-center text-secondary">or</span>

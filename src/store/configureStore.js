@@ -8,7 +8,7 @@ import {
 } from "redux-state-sync";
 
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
     chat: chatReducer,
     users: userReducer,
 });

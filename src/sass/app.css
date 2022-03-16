@@ -155,6 +155,8 @@
 
 .date-time {
   font-size: 12px;
+  width: 90px;
+  background-color: khaki;
   color: #999;
   margin-top: 5px;
   display: -webkit-box;
