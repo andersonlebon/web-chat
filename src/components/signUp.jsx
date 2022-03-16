@@ -20,8 +20,10 @@ const SignUp = () => {
         }
         if (!newUser) {
             users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+            sessionStorage.setItem('user', JSON.stringify(user));
         }
-        localStorage.setItem('users', JSON.stringify(users));
+
         dispatch({type: saveUser.type, payload: user});
         
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ChatMessage = ({ position }) => {
+const ChatMessage = ({ position, message }) => {
     return ( 
         <div className={`${position} conversation-message d-flex w-100`}>
             <div className="ChatMessage__avatar ">
@@ -9,7 +9,7 @@ const ChatMessage = ({ position }) => {
             </div>
             <div className="chatMessage__content ">
                  <div className={`p-2 ${position === 'left' ? 'bg-light' : 'bg-primary'} `}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas culpa optio quidem, ratione ab magnam nihil veritatis
+                     {message.message}
                <p className="ecor-right bg-primary  "></p>
                 <p className="ecor-left bg-light "></p>
                

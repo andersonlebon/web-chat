@@ -13,17 +13,15 @@ const LogIn = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        const user = JSON.parse(localStorage.getItem('user')) || null;
+         const users = JSON.parse(localStorage.getItem('users')) || [];
+        const user = users.find(item => item.name === nameValue);
+
         if (user) {
-            dispatch({type: setUser.type, payload: {name: user.name}});
+            sessionStorage.setItem('user', JSON.stringify(user));
         }
         else {
         dispatch({type: setUser.type, payload: {name: nameValue}});
         }
-
-        localStorage.setItem('user', JSON.stringify({name: nameValue}));
-
-
     }
 
     return ( 
