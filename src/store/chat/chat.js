@@ -1,18 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from 'uuid';
 
-
-export const getMessages = (dispatch) => (setMessages) => {
-
-    const messages = JSON.parse(localStorage.getItem('messages')) || [];
-        dispatch({type: setMessages.type, payload: messages});
-    console.log(messages);
-}
-
-export const addMessage = (dipatch) => (saveMessage) => (message) => {
-    dipatch(saveMessage(message));
-
-}
 const chatSlice = createSlice({
     name: "chat",
     initialState: {
@@ -33,7 +21,7 @@ const chatSlice = createSlice({
             }
             else {
                 state.chats.push({
-                 id : uuid(),
+                 id : action.payload.id,
                  messages: [action.payload],
                  sender : action.payload.sender || "",
                  receiver : action.payload.receiver || null,

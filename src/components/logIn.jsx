@@ -13,7 +13,17 @@ const LogIn = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        const user = JSON.parse(localStorage.getItem('user')) || null;
+        if (user) {
+            dispatch({type: setUser.type, payload: {name: user.name}});
+        }
+        else {
         dispatch({type: setUser.type, payload: {name: nameValue}});
+        }
+
+        localStorage.setItem('user', JSON.stringify({name: nameValue}));
+
+
     }
 
     return ( 
