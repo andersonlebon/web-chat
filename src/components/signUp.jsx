@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Input from './common/input';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { saveUser } from '../store/users/user';
 import { v4 as uuid } from 'uuid';
 import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [nameValue, setnameValue] = useState('');
+    const { error } = useSelector(state => state.users)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const handelChange = (e) => {
@@ -31,6 +32,9 @@ const SignUp = () => {
             sessionStorage.setItem('user', JSON.stringify(user));
             dispatch({type: saveUser.type, payload: user});
             navigate(`/`)
+            window.location.reload();
+            
+
         }
 
         dispatch({type: saveUser.type, payload: user});
@@ -44,6 +48,8 @@ const SignUp = () => {
                 <div className="group-control my-4">
                 <label htmlFor="liginInput" className="title">Name</label>
                 <Input type="text" id="liginInput" onchange={handelChange} value={nameValue} clas="form-control" name="username"/>
+                {error && <p className="alert-danger px-2 py-0 my-2 alert">{error}</p>}
+
                 </div>
                 <button className="btn btn-primary" type="submit">Sign Up</button>
                 <span className="text-center text-secondary">or</span>

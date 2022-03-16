@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { setUser } from '../store/users/user';
@@ -8,6 +8,7 @@ import Input from './common/input';
 
 const LogIn = () => {
     const [nameValue, setnameValue] = useState('');
+    const { error } = useSelector(state => state.users);
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
@@ -39,7 +40,7 @@ const LogIn = () => {
                 <div className="group-control my-5">
                 <label htmlFor="liginInput" className="title">Name</label>
                 <Input type="text" id="liginInput" onchange={handleChange} value={nameValue} clas="form-control" name="username"/>
-                
+                {error && <p className="alert-danger px-2 py-0 my-2 alert">{error}</p>}
                 </div>
                 <button className="btn btn-primary" type="submit">Sign In</button>
                 <span className="text-center text-secondary">or</span>

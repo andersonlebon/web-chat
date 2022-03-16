@@ -17,12 +17,13 @@ function App() {
   const { user } = useSelector(state => state.users);
   const dispatch = useDispatch();
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user')) || {};
+    const user = JSON.parse(sessionStorage.getItem('user'))
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
         const users = JSON.parse(localStorage.getItem('users')) || [];
         dispatch(setUsers(users));
         dispatch(setMessages(messages));
-        dispatch(setUser(user));
+        if(user) dispatch(setUser(user));
+
   }, [dispatch]);
 
 
