@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Conversation from './chats/chatRoom';
 import { setUser, setUsers } from '../store/users/user';
 import AllUsers from './chats/chatSideBar';
+import { FaUserCircle } from 'react-icons/fa';
 
 
 
@@ -22,14 +23,34 @@ const Home = () => {
     // const usersAll = users.filter(item => item.id !== user.id);
 
     return (
-        <main className="homepage">
-            <AllUsers/>
-            <h1>Welcome to the Web chat</h1>
+        <section className="homepage">
             <ul className="">
-            { chats.map(chat => <li key={chat.id}><Link to={`/conversation/${user.id !== chat.user1 ? chat.user1 : chat.user2 }`} key={chat.id}>{user.id !== chat.user1 ? chat.username1 : chat.username2 }</Link></li>)}
+            { chats.map(chat => <li key={chat.id}><Link to={`/conversation/${user.id !== chat.user1 ? chat.user1 : chat.user2 }`} key={chat.id}></Link></li>)}
             </ul>            
-            
-        </main>
+             <section className="side-chat bg-light">
+            <ul className="m-0 p-0">
+            {chats.map(chat => (
+                <li  key={chat.id} className="d-flex bg-white">
+                    <Link className="d-flex align-items-center justify-content-between" to={`/conversation/${user.id !== chat.user1 ? chat.user1 : chat.user2 }`} >
+                        <div className="name-icon d-flex align-items-center justify-content-between">
+                            <div className="icon-img">
+                                <FaUserCircle/>
+                            </div>
+                        <h2 className="name pl-3 text-secondary"> {user.id !== chat.user1 ? chat.username1 : chat.username2 }</h2>
+                        </div>
+
+                        <div className="date-time">
+                            <span className="date text-dark">Date</span>
+                            <p className="date">{chat.createdAt.time || "2020-20-10"}</p>
+                            <span className="date text-dark">Time</span>
+                            <p className="time">{chat.createdAt.date || "10:10:10"}</p>
+                        </div>
+                    </Link>
+                </li>))}
+            </ul>
+
+        </section>
+        </section>
     )
 }
  

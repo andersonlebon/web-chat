@@ -1,3 +1,43 @@
-.navbar{ 
-    background-color: lightgreen;
+.navbar-chat { 
+    background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+  margin-bottom: 0;
+  padding: 10px 40px;
+  z-index: 1030;
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .navbar-menu {
+        height: 100%;
+    }
+
+    ul {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 15px;
+        li {
+            a {
+                text-decoration: none;
+            }
+        } 
+
+    }
+
+
+    .navbar-logo {
+
+        .icon {
+            height: 100%;
+            font-size: 50px;
+            font-weight: bold;
+            color: #333;
+        }
+        font-size: 13px;
+    }
+}
+
+.navbar-container {
 }

@@ -5,6 +5,7 @@
         border: 1px solid rgba(211, 211, 211, 0.404);
         border-radius: 5px;
         margin: 10px 20px;
+        height: 110px;
     }
     a {
         text-decoration: none;
@@ -36,5 +37,10 @@
     margin-top: 5px;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     flex-direction: column;
+    p {
+        padding: 0;
+        margin: 0;
+    }
 }

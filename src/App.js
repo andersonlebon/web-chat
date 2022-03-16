@@ -9,6 +9,7 @@ import { getMessages, setMessages } from './store/chat/chat';
 import LogIn from './components/logIn';
 import SignUp from './components/signUp';
 import Conversation from './components/chats/chatRoom';
+import AllUsers from './components/chats/chatSideBar';
 
 
 function App() {
@@ -26,12 +27,16 @@ function App() {
   return (
     <>
         <Navbar currentUser={currentUser}/>
+        <main>
         <Routes>
+
           <Route path="/login" element={<LogIn/>}/>
-          <Route path="/Home" exact element={<Home/>}/>
+          <Route path="/" exact element={<Home/>}/>
+          <Route path="/newconversation" element={<AllUsers/>}/>
           <Route path="/conversation/:id" element={<Conversation/>}/>
           <Route path="/signup" element={<SignUp/>}/>
         </Routes>
+        </main>
     </>
 
   );

@@ -69,6 +69,11 @@
   border-radius: 0 0 100% 0;
 }
 
+.homepage {
+  background-color: lightsalmon;
+  height: 100%;
+}
+
 .homepage .left .chatMessage__content p {
   background-color: cadetblue;
 }
@@ -77,6 +82,7 @@
   border: 1px solid rgba(211, 211, 211, 0.404);
   border-radius: 5px;
   margin: 10px 20px;
+  height: 110px;
 }
 
 .side-chat a {
@@ -113,14 +119,58 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.navbar {
-  background-color: lightgreen;
+.date-time p {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-chat {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+  padding: 10px 40px;
+  z-index: 1030;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar-chat .navbar-menu {
+  height: 100%;
+}
+
+.navbar-chat ul {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.navbar-chat ul li a {
+  text-decoration: none;
+}
+
+.navbar-chat .navbar-logo {
+  font-size: 13px;
+}
+
+.navbar-chat .navbar-logo .icon {
+  height: 100%;
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
 }
 
 *::before, *::after {
@@ -130,5 +180,18 @@
 
 body {
   color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding-top: 140px;
 }
 /*# sourceMappingURL=app.css.map */

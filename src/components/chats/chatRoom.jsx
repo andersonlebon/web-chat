@@ -58,7 +58,9 @@ const Conversation = () => {
                 messages: [amessage],
                 sender :amessage.sender || "",
                 receiver :amessage.receiver || null,
-                createdAt :amessage.time + " " + amessage.date,
+                createdAt : { time: amessage.time, 
+                    date: amessage.date,
+                }
             })
         }
         localStorage.setItem('messages', JSON.stringify(messages));

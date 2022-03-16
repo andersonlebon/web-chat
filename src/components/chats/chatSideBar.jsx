@@ -25,7 +25,9 @@ const AllUsers = () => {
                         </div>
 
                         <div className="date-time">
+                            <span className="date text-dark">Date</span>
                             <p className="date">{auser.time || "2020-20-10"}</p>
+                            <span className="date text-dark">Time</span>
                             <p className="time">{auser.date || "10:10:10"}</p>
                         </div>
                     </Link>
