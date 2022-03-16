@@ -37,12 +37,21 @@
         }
         font-size: 13px;
     }
+    .log-out {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    font-size: 25px;
+}
 }
 
-@media (min-width: 768px) {
-    .navbar-chat {
-        .navbar-logo {
-            font-size: 12px;
-        }
+@media (max-width: 758px) {
+    .navbar-chat{
+        padding: 15px;
+        .log-out {
+            font-size: 14px; 
+            padding: 8px;
+               }
     }
 }

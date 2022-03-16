@@ -98,7 +98,6 @@
 }
 
 .homepage {
-  background-color: lightsalmon;
   height: 100%;
 }
 
@@ -207,14 +206,28 @@
   color: #333;
 }
 
-@media (min-width: 768px) {
-  .navbar-chat .navbar-logo {
-    font-size: 12px;
-  }
+.navbar-chat .log-out {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  font-size: 25px;
 }
 
-.logIn {
-  height: 40vh;
+@media (max-width: 758px) {
+  .navbar-chat {
+    padding: 15px;
+  }
+  .navbar-chat .log-out {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
 
 .logIn label {
@@ -255,6 +268,6 @@ a {
 
 main {
   padding-top: 140px;
-  height: 70vh;
+  height: 100vh;
 }
 /*# sourceMappingURL=app.css.map */

@@ -29,7 +29,7 @@ function App() {
   return (
     <>
         <Navbar currentUser={ user }/>
-        <main className="d-flex flex-column justify-content-center">
+        <main className="d-flex flex-column bg-light">
           {user.id === null ? (
           <Routes><Route path="/signup" element={<SignUp/>}/>
           <Route path="/" element={<LogIn/>}/>

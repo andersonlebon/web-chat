@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
+import { MdOutlineLogout } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 
@@ -20,6 +21,7 @@ const Navbar = ({currentUser}) => {
             <div className="navbar-logo d-flex flex-column align-items-center justify-content-around">
                 <div className="icon text-primary"><FaUserCircle /></div> <div>{currentUser.name || ''}</div>
             </div>
+            <button className="btn log-out btn-primary"><MdOutlineLogout/></button>
         </div>
     </header>
     );
