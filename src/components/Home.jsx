@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Conversation from './chats/chatConversation';
 import Input from './common/input';
 import { saveMessage } from '../store/chat/chat'
-import { setUser } from '../store/users/user';
+import { setUser, setUsers } from '../store/users/user';
 import { v4 as uuid } from 'uuid';
 
 
@@ -25,6 +25,7 @@ const Home = () => {
 
         const amessage = {
             id: user.id,
+            authorId: user.id,
             message,
             time: time,
             date: date, 
@@ -35,13 +36,13 @@ const Home = () => {
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const newMessage = messages.find(item => item.id === amessage.id);
             if (newMessage) {
-                newMessage.messages.push({message: amessage.message, time: amessage.time, date: amessage.date, });
+                newMessage.messages.push(amessage);
                 console.log(newMessage);
     }
         else {
             messages.push({
-                id : uuid(),
-                messages: [{message: amessage.message, time: amessage.time, date: amessage.date, }],
+                id : user.id,
+                messages: [amessage],
                 sender :amessage.sender || "",
                 receiver :amessage.receiver || null,
                 createdAt :amessage.time + " " + amessage.date,
@@ -55,6 +56,8 @@ const Home = () => {
         const user = JSON.parse(localStorage.getItem('user')) || null;
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const findUser = users.find(item => item.name === user.name);
+        dispatch(setUsers(users))
+        console.log(findUser);
         if (findUser) {
             dispatch({type: setUser.type, payload: {name: user.name}});
         }
