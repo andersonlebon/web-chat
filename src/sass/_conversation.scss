@@ -16,7 +16,11 @@
             border-radius: 50px;
             border: none;
             background-color: #f5f5f5f3;
+            &:focus {
+                outline: none;
+            }
         }
+        
     }
 }
 
@@ -47,7 +51,6 @@
 }
 
 .chatMessage__content{
-        width: 100%;
         margin: 0;
         padding: 0;
         position: relative;
@@ -59,6 +62,8 @@
             top: 30%;
             padding: 0;
             margin: 0;
+            width: auto;
+            background: #000;
 
             
         }
@@ -77,6 +82,7 @@
 }
 
 .right {
+    justify-content: flex-end;
    .ChatMessage__avatar  {
        order: 2;
 

@@ -21,6 +21,10 @@
   background-color: #f5f5f5f3;
 }
 
+.conversation form input[type="text"]:focus {
+  outline: none;
+}
+
 .send-btn {
   width: 45px;
   height: 40px;
@@ -45,7 +49,6 @@
 }
 
 .chatMessage__content {
-  width: 100%;
   margin: 0;
   padding: 0;
   position: relative;
@@ -58,6 +61,8 @@
   top: 30%;
   padding: 0;
   margin: 0;
+  width: auto;
+  background: #000;
 }
 
 .chatMessage__content .ecor-left {
@@ -68,6 +73,12 @@
   top: 0;
   left: -10px;
   border-radius: 0 0 0 100%;
+}
+
+.right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .right .ChatMessage__avatar {

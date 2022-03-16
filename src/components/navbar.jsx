@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdOutlineLogout } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = ({currentUser}) => {
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        sessionStorage.removeItem('user');
+        window.location.reload();
+    }
     return ( 
     <header className="navbar-chat d-flex  justify-content-between align-items-center">
         <div className="navbar-container w-100 d-flex align-items-center justify-content-between">
@@ -21,7 +27,7 @@ const Navbar = ({currentUser}) => {
             <div className="navbar-logo d-flex flex-column align-items-center justify-content-around">
                 <div className="icon text-primary"><FaUserCircle /></div> <div>{currentUser.name || ''}</div>
             </div>
-            <button className="btn log-out btn-primary"><MdOutlineLogout/></button>
+            { currentUser.name && <button onClick={handleLogout} type="button" className="btn log-out btn-primary"><MdOutlineLogout/></button>}
         </div>
     </header>
     );
