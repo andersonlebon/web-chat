@@ -20,8 +20,6 @@ const Conversation = () => {
         dispatch({type: setMessages.type, payload: messages});
     }, [dispatch]);
     const{ messages }  = chat.chats.find(item => item.user1 === user.id && item.user2 === id) || chat.chats.find(item => item.user2 === user.id && item.user1 === id) || {};
-    console.log(messages);
-
 
      const handleChange = (e) => {
         setMessage(e.target.value);
@@ -31,8 +29,6 @@ const Conversation = () => {
         let today = new Date();
         let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        console.log(id);
-
         const amessage = {
             id: uuid(),
             authorId: user.id,
@@ -41,13 +37,10 @@ const Conversation = () => {
             date: date, 
         };
 
-        console.log(user.id);
-
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const newMessage = messages.find(item => item.user1 === user.id && item.user2 === id) || messages.find(item => item.user2 === user.id && item.user1 === id)
             if (newMessage) {
                 newMessage.messages.push(amessage);
-                console.log(newMessage);
     }
         else {
             messages.push({
