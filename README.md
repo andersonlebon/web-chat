@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Sign In | Sign Up
 -----|----
-![image](https://user-images.githubusercontent.com/65068771/158721008-1e44f30e-2b72-403a-be66-50953f4bde8b.png) | ![image](https://user-images.githubusercontent.com/65068771/158721130-9c315713-88d9-43d4-8c60-a6e654a7051f.png)
+![image](https://user-images.githubusercontent.com/65068771/158721008-1e44f30e-2b72-403a-be66-50953f4bde8b.png) | ![image](https://user-images.githubusercontent.com/65068771/158722369-715c44ef-7f1e-440a-aa6d-0b69763d15f3.png)
+
 
 ## Video demonstration
 https://www.loom.com/share/71da26eced994a1e8977013b99103860
