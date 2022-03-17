@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Web-Chat
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Sign In | Sign Up
+-----|----
+![image](https://user-images.githubusercontent.com/65068771/158721008-1e44f30e-2b72-403a-be66-50953f4bde8b.png) | ![image](https://user-images.githubusercontent.com/65068771/158721130-9c315713-88d9-43d4-8c60-a6e654a7051f.png)
 
-In the project directory, you can run:
+## [Video demonstration](https://www.loom.com/share/71da26eced994a1e8977013b99103860)
+https://www.loom.com/share/71da26eced994a1e8977013b99103860
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is build with:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ![HTML5](https://img.shields.io/badge/-HTML5-000000?style=flat&logo=html5&logoColor=ffffff&labelColor=E34F26), ![CSS3](https://img.shields.io/badge/-CSS3-000000?style=flat&logo=css3&logoColor=ffffff&labelColor=1572B6), ![Sass](https://img.shields.io/badge/-Sass-000000?style=flat&logo=sass&logoColor=ffffff&labelColor=%23CC6699)
+- ![Sass](https://img.shields.io/badge/-Sass-000000?style=flat&logo=sass&logoColor=ffffff&labelColor=%23CC6699)
+- ![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=flat&logo=javascript)
+- ![React](https://img.shields.io/badge/-React-000000?style=flat&logo=react)
+- ![Redux](https://img.shields.io/badge/-Redux-000000?style=flat&logo=redux&logoColor=764ABC&labelColor=ffffff)
+- ![Git](https://img.shields.io/badge/-Git-000000?style=flat&logo=git&logoColor=F05032&labelColor=ffffff)
+- ![Bootstrap](https://img.shields.io/badge/-Bootstrap-000000?style=flat&logo=bootstrap&logoColor=ffffff&labelColor=563D7C)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get the content of this project locally you need to run this command in your terminal:
 
-### `npm run build`
+- `git clone https://github.com/andersonlebon/web-chat.git`
+- `cd web-chat`
+-  run `npm install` to download all the dependancies of the project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Use `npm start` to run the app in live server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run `npm test` to run tests.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Anderson Caleb**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- GitHub: [@Andersonlebon](https://github.com/andersonlebon)
+- Twitter: [@BuyananaCaleb](https://twitter.com/BuyananaCaleb)
+- LinkedIn: [Anderson Caleb](https://www.linkedin.com/in/anderson-caleb-915343209/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## :handshake: Contributing
 
-## Learn More
+Feel free to check the [issues page](https://github.com/andersonlebon/web-chat/issues)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Show your support
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Give a :star: if you like this project!
 
-### Code Splitting
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Thanks to everyone who will get time to check this code especially to code reviewers.
