@@ -45,7 +45,7 @@ const SignUp = () => {
     <section className="logIn d-flex flex-column justify-content-center" onSubmit={handelSubmit}>
             <h1 className="text-center weight-bold">Sign Up</h1>
             <form className="flex-column d-flex p-3">
-                <div className="group-control my-4">
+                <div className="group-control my-5">
                 <label htmlFor="liginInput" className="title">Name</label>
                 <Input type="text" id="liginInput" onchange={handelChange} value={nameValue} clas="form-control" name="username"/>
                 {error && <p className="alert-danger px-2 py-0 my-2 alert">{error}</p>}
