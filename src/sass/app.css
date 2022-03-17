@@ -4,9 +4,12 @@
   gap: 35px;
   padding: 10px;
   height: 100vh;
+  overflow-y: scroll;
+  padding-bottom: 130px;
 }
 
 .conversation form {
+  z-index: 100;
   gap: 10px;
   width: 100%;
   padding: 10px;
@@ -279,7 +282,7 @@ a {
 }
 
 main {
-  padding-top: 140px;
+  padding-top: 120px;
   height: 100vh;
 }
 

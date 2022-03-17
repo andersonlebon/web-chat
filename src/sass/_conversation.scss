@@ -4,8 +4,11 @@
     gap:  35px;
     padding: 10px;
     height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 130px;
 
     form  {
+        z-index: 100;
         gap: 10px;
         width: 100%;
         padding: 10px;
