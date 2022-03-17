@@ -16,6 +16,8 @@ import AllUsers from './components/chats/chatSideBar';
 function App() {
   const { user } = useSelector(state => state.users);
   const dispatch = useDispatch();
+    const currentuser = JSON.parse(sessionStorage.getItem('user'))
+
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
@@ -29,9 +31,9 @@ function App() {
 
   return (
     <>
-        <Navbar currentUser={ user }/>
+        <Navbar currentUser={ user.name !== null && currentuser ? currentuser : {}}/>
         <main className="d-flex flex-column bg-light">
-          {user.id === null ? (
+          {!currentuser ? (
           <Routes><Route path="/signup" element={<SignUp/>}/>
           <Route path="/" element={<LogIn/>}/>
           <Route path="*" element={<LogIn/>}/>

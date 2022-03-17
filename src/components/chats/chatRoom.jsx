@@ -72,7 +72,7 @@ const Conversation = () => {
     
     return ( 
         <section className="conversation d-flex flex-column bg-white ">
-            { messages? messages.map(message => <ChatMessage key={message.id} message={message} position={user.id === message.authorId ? 'right' : 'left'}/>) : 'no conversations'}
+            { messages? messages.map(message => <ChatMessage key={message.id} message={message} position={user.id === message.authorId ? 'right' : 'left'}/>) : <p className="weight-italic text-secondary text-center">No conversaton</p>}
             <form className="d-flex bg-primary justify-content-between" onSubmit={handleSubmit}>
                 <Input type="text" clas="form-control input-text" onchange={handleChange} value={message} name="message"/>
                 <button type="submit" className="text-primary send-btn"><MdSend/></button> 

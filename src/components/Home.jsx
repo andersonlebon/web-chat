@@ -22,12 +22,9 @@ const Home = () => {
     }, [dispatch]);
     // const usersAll = users.filter(item => item.id !== user.id);
 
-    return (
-        <section className="homepage">
-            <ul className="">
-            { chats.map(chat => <li key={chat.id}><Link to={`/conversation/${user.id !== chat.user1 ? chat.user1 : chat.user2 }`} key={chat.id}></Link></li>)}
-            </ul>            
+    return (          
              <section className="side-chat bg-light">
+                 {chats.length === 0 && <p className="weight-italic text-secondary text-center">There is no conversation....</p>}
             <ul className="m-0 p-0">
             {chats.map(chat => (
                 <li  key={chat.id} className="d-flex bg-white">
@@ -52,7 +49,6 @@ const Home = () => {
                 </li>))}
             </ul>
 
-        </section>
         </section>
     )
 }

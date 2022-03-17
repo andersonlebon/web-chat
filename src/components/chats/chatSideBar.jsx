@@ -14,7 +14,7 @@ const AllUsers = () => {
     return ( 
         <section className="side-chat bg-light">
             <ul className="m-0 p-0">
-            {users.map(auser => (
+            {usersAll.map(auser => (
                 <li  key={auser.id} className="d-flex bg-white">
                     <Link className="d-flex align-items-center justify-content-between" to={`/conversation/${auser.id}`} key={auser.id}>
                         <div className="name-icon d-flex align-items-center justify-content-between">

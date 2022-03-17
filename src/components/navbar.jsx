@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-const Navbar = ({currentUser}) => {
-    const navigate = useNavigate();
+const Navbar = ({currentUser}) => {    
     const handleLogout = () => {
         sessionStorage.removeItem('user');
         window.location.reload();
