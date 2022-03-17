@@ -6,7 +6,7 @@ Sign In | Sign Up
 -----|----
 ![image](https://user-images.githubusercontent.com/65068771/158721008-1e44f30e-2b72-403a-be66-50953f4bde8b.png) | ![image](https://user-images.githubusercontent.com/65068771/158721130-9c315713-88d9-43d4-8c60-a6e654a7051f.png)
 
-## [Video demonstration](https://www.loom.com/share/71da26eced994a1e8977013b99103860)
+## Video demonstration
 https://www.loom.com/share/71da26eced994a1e8977013b99103860
 
 ## Built With
