@@ -1,0 +1,32 @@
+@import 'conversation' ;
+@import 'sidebar';
+@import 'navbar';
+@import 'logIn';
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    color: black
+
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+padding-top: 120px;
+height: 100vh;
+
+.weight-italic {
+    font-style: italic;
+}
+}

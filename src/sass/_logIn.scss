@@ -1,0 +1,19 @@
+.logIn {
+    // height: 40vh;
+
+    label {
+        color: rgb(156, 156, 156);
+    }
+}
+
+
+@media (min-width: 758px) {
+    .logIn {
+        justify-content: center;
+        align-items: center;
+        form  {
+            width: 55%;
+        }
+    }
+}
+

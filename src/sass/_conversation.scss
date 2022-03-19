@@ -1,0 +1,125 @@
+.conversation {
+    width: 100%;
+    font-size: 13px;
+    gap:  35px;
+    padding: 10px;
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 130px;
+
+    form  {
+        z-index: 100;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        input[type="text"] {
+            border-radius: 50px;
+            border: none;
+            background-color: #f5f5f5f3;
+            &:focus {
+                outline: none;
+            }
+        }
+        
+    }
+}
+
+
+.send-btn {
+    width: 45px;
+    height: 40px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.ChatMessage__avatar {
+    img {
+        width: 65px;
+        width: 65px;
+        border-radius: 50%;
+    }
+}
+
+.conversation-message {
+    margin: 0;
+    gap: 15px;
+}
+
+.chatMessage__content{
+        margin: 0;
+        padding: 0;
+        position: relative;
+    
+        div {
+            position: relative;
+            border-radius: 8px;
+            z-index: 2;
+            top: 30%;
+            padding: 0;
+            margin: 0;
+            width: auto;
+            background: #000;
+
+            
+        }
+
+        .ecor-left {
+                width: 25px;
+                height: 15px;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: -10px;
+                border-radius: 0 0 0 100%;
+            }
+
+
+}
+
+.right {
+    justify-content: flex-end;
+   .ChatMessage__avatar  {
+       order: 2;
+
+   }
+   .chatMessage__content {
+        order: 1;
+        margin: 0;
+   }
+   div {
+       .ecor-left{
+           display: none;
+       }
+
+       
+       .ecor-right {
+           width: 25px;
+           height: 15px;
+           position: absolute;
+           z-index: 1;
+           top: 0;
+           right: -10px;
+           border-radius: 0 0 100% 0;
+        }
+    }
+}
+
+.homepage {
+    height: 100%;
+    .left {
+        .chatMessage__content{
+            p {
+                 
+                background-color: cadetblue;
+            }
+        }
+    }
+}
