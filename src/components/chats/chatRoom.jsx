@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, useRef} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ChatMessage from '../common/chatMessage';
 import { setMessages, saveMessage} from '../../store/chat/chat';
@@ -15,12 +15,23 @@ const Conversation = () => {
     const user = JSON.parse(sessionStorage.getItem('user')) || {};
     const { id } = useParams();
     const dispatch = useDispatch();
+    const conversationScroll = useRef(true) 
+
+
+
+    const schollDowmn = () => {
+        conversationScroll.current.scrollIntoView({ behavior: "smooth" })
+    }
     useEffect(() => {
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
         dispatch({type: setMessages.type, payload: messages});
-    }, [dispatch]);
-    const{ messages }  = chat.chats.find(item => item.user1 === user.id && item.user2 === id) || chat.chats.find(item => item.user2 === user.id && item.user1 === id) || {};
+    }, []);
 
+    
+    const{ messages }  = chat.chats.find(item => item.user1 === user.id && item.user2 === id) || chat.chats.find(item => item.user2 === user.id && item.user1 === id) || {};
+    useEffect(() => {
+        schollDowmn()
+    }, [messages]);
      const handleChange = (e) => {
         setMessage(e.target.value);
     }
@@ -70,6 +81,7 @@ const Conversation = () => {
                 <Input type="text" clas="form-control input-text" onchange={handleChange} value={message} name="message"/>
                 <button type="submit" className="text-primary send-btn"><MdSend/></button> 
             </form>
+            <div ref={conversationScroll}/>
             </section>
      );
 }
