@@ -1,5 +1,6 @@
 # Web-Chat
-
+## Description
+Web-chat is  web application chat that can make conversation between two users in deferents tabs but sharing the same browzer in realtime, Note that the aplication is managing the storege of text messages using the browzer localstorage associated with Redux. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Sign In | Sign Up
